@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kalayaan Cafe – Menu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><span class="brand-icon">☕</span> Kalayaan Cafe</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" href="menu.html" role="button" data-bs-toggle="dropdown">Menu</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#coffee">☕ Coffee</a></li>
+            <li><a class="dropdown-item" href="#non-coffee">🥤 Non-Coffee</a></li>
+            <li><a class="dropdown-item" href="#pastries">🥐 Pastries</a></li>
+            <li><a class="dropdown-item" href="#meals">🍽️ Light Meals</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="order.html">Order</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content text-center">
+    <div class="section-label" style="color:var(--accent);">Crafted With Care</div>
+    <h1 class="page-hero-title">Our <em>Menu</em></h1>
+    <p>From bean to cup — every item made with love.</p>
+  </div>
+</div>
+
+<!-- MENU FILTER TABS -->
+<section class="section-padding bg-cream">
+  <div class="container">
+
+    <!-- Coffee -->
+    <div id="coffee" class="menu-section mb-5">
+      <div class="menu-section-header">
+        <span class="menu-section-icon">☕</span>
+        <h2>Coffee</h2>
+      </div>
+      <div class="table-responsive">
+        <table class="table menu-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Description</th>
+              <th>Small</th>
+              <th>Regular</th>
+              <th>Large</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Sagada Latte</strong> <span class="badge-bestseller">Best Seller</span></td>
+              <td>Espresso, steamed milk, muscovado syrup</td>
+              <td>₱155</td><td>₱175</td><td>₱195</td>
+            </tr>
+            <tr>
+              <td><strong>Kapeng Barako Americano</strong></td>
+              <td>Double-shot barako espresso with hot water</td>
+              <td>₱120</td><td>₱140</td><td>₱160</td>
+            </tr>
+            <tr>
+              <td><strong>Benguet Cold Brew</strong> <span class="badge-new">New</span></td>
+              <td>18-hour cold-steeped Benguet beans</td>
+              <td>—</td><td>₱175</td><td>₱195</td>
+            </tr>
+            <tr>
+              <td><strong>Caramel Macchiato</strong></td>
+              <td>Vanilla, steamed milk, espresso, caramel drizzle</td>
+              <td>₱160</td><td>₱180</td><td>₱200</td>
+            </tr>
+            <tr>
+              <td><strong>Flat White</strong></td>
+              <td>Double ristretto with microfoam milk</td>
+              <td>₱155</td><td>₱170</td><td>—</td>
+            </tr>
+            <tr>
+              <td><strong>Kapeng Kalayaan</strong></td>
+              <td>Our signature blend — nutty, chocolatey, smooth</td>
+              <td>₱150</td><td>₱170</td><td>₱190</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Non-Coffee -->
+    <div id="non-coffee" class="menu-section mb-5">
+      <div class="menu-section-header">
+        <span class="menu-section-icon">🥤</span>
+        <h2>Non-Coffee</h2>
+      </div>
+      <div class="table-responsive">
+        <table class="table menu-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Description</th>
+              <th>Small</th>
+              <th>Regular</th>
+              <th>Large</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ube Milk Tea</strong> <span class="badge-bestseller">Best Seller</span></td>
+              <td>House ube syrup with creamy milk tea and tapioca pearls</td>
+              <td>₱145</td><td>₱165</td><td>₱185</td>
+            </tr>
+            <tr>
+              <td><strong>Matcha Latte</strong></td>
+              <td>Ceremonial-grade matcha with oat milk</td>
+              <td>₱155</td><td>₱175</td><td>₱195</td>
+            </tr>
+            <tr>
+              <td><strong>Dalandan Fizz</strong></td>
+              <td>Fresh dalandan juice with sparkling water & mint</td>
+              <td>—</td><td>₱130</td><td>₱150</td>
+            </tr>
+            <tr>
+              <td><strong>Hot Chocolate</strong></td>
+              <td>Tablea cacao with full cream milk</td>
+              <td>₱130</td><td>₱150</td><td>₱165</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Pastries -->
+    <div id="pastries" class="menu-section mb-5">
+      <div class="menu-section-header">
+        <span class="menu-section-icon">🥐</span>
+        <h2>Pastries & Baked Goods</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="pastry-card" onclick="openLightbox('https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&q=80', 'Ube Croissant')">
+            <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=300&q=80" alt="Ube Croissant" class="img-fluid"/>
+            <div class="pastry-info">
+              <h6>Ube Croissant</h6>
+              <span>₱120</span>
+            </div>
+            <div class="pastry-zoom"><i class="fas fa-search-plus"></i></div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="pastry-card" onclick="openLightbox('https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80', 'Barako Brownie')">
+            <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=300&q=80" alt="Barako Brownie" class="img-fluid"/>
+            <div class="pastry-info">
+              <h6>Barako Brownie</h6>
+              <span>₱95</span>
+            </div>
+            <div class="pastry-zoom"><i class="fas fa-search-plus"></i></div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="pastry-card" onclick="openLightbox('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80', 'Pandan Loaf')">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=300&q=80" alt="Pandan Loaf" class="img-fluid"/>
+            <div class="pastry-info">
+              <h6>Pandan Loaf Slice</h6>
+              <span>₱85</span>
+            </div>
+            <div class="pastry-zoom"><i class="fas fa-search-plus"></i></div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="pastry-card" onclick="openLightbox('https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=600&q=80', 'Cheese Roll')">
+            <img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=300&q=80" alt="Cheese Roll" class="img-fluid"/>
+            <div class="pastry-info">
+              <h6>Quezo de Bola Roll</h6>
+              <span>₱90</span>
+            </div>
+            <div class="pastry-zoom"><i class="fas fa-search-plus"></i></div>
+          </div>
+        </div>
+      </div>
+      <p class="mt-3 text-muted small"><i class="fas fa-info-circle me-1"></i>Click on any pastry to view a larger image.</p>
+    </div>
+
+    <!-- Light Meals -->
+    <div id="meals" class="menu-section">
+      <div class="menu-section-header">
+        <span class="menu-section-icon">🍽️</span>
+        <h2>Light Meals</h2>
+      </div>
+      <div class="table-responsive">
+        <table class="table menu-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Description</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Avocado Toast</strong></td>
+              <td>Sourdough, smashed avocado, cherry tomatoes, sea salt</td>
+              <td>₱195</td>
+            </tr>
+            <tr>
+              <td><strong>Longsilog Wrap</strong></td>
+              <td>Filipino longanisa, garlic rice, egg, wrapped in a soft tortilla</td>
+              <td>₱215</td>
+            </tr>
+            <tr>
+              <td><strong>Tuna Melt Panini</strong></td>
+              <td>Tuna, cheese, caramelized onion on toasted ciabatta</td>
+              <td>₱205</td>
+            </tr>
+            <tr>
+              <td><strong>Classic BLT</strong></td>
+              <td>Bacon, lettuce, tomato, aioli on toasted sourdough</td>
+              <td>₱210</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-strip text-center">
+  <h3>Ready to order?</h3>
+  <p>Skip the wait — place your order online for dine-in or takeout.</p>
+  <a href="order.html" class="btn btn-primary-custom">Order Now</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <h5 class="footer-brand">☕ Kalayaan Cafe</h5>
+        <p>Where every cup tells a story of freedom, flavor, and Filipino pride.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/profile.php?id=61554568252497" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h6 class="footer-heading">Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="order.html">Order</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h6 class="footer-heading">Visit Us</h6>
+        <p><i class="fas fa-map-marker-alt me-2"></i>Rodriguez, Montalban</p>
+        <p><i class="fas fa-clock me-2"></i>Mon–Sun: 7:00 AM – 10:00 PM</p>
+        <p><i class="fas fa-phone me-2"></i>(02) 8123-4567</p>
+        <p><i class="fas fa-envelope me-2"></i>hello@kalayaancafe.ph</p>
+      </div>
+    </div>
+    <hr class="footer-divider"/>
+    <div class="sitemap text-center mb-3">
+      <strong>Site Map:</strong>
+      <a href="index.html">Home</a> |
+      <a href="menu.html">Menu</a> |
+      <a href="about.html">About Us</a> |
+      <a href="order.html">Order</a>
+    </div>
+    <p class="footer-credit text-center">© 2024 Kalayaan Cafe. Designed & Developed by <strong>Nichole Angelo Teodoro</strong> · IT130L Web Design & Development</p>
+  </div>
+</footer>
+
+<!-- LIGHTBOX MODAL -->
+<div class="modal fade" id="lightboxModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-transparent border-0">
+      <div class="modal-body p-0 text-center position-relative">
+        <img id="lightboxImg" src="" class="img-fluid rounded-custom" alt=""/>
+        <p id="lightboxCaption" class="text-white mt-2 fs-5"></p>
+        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

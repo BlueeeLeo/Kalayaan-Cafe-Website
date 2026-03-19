@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kalayaan Cafe – Order</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><span class="brand-icon">☕</span> Kalayaan Cafe</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="menu.html" role="button" data-bs-toggle="dropdown">Menu</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="menu.html#coffee">☕ Coffee</a></li>
+            <li><a class="dropdown-item" href="menu.html#non-coffee">🥤 Non-Coffee</a></li>
+            <li><a class="dropdown-item" href="menu.html#pastries">🥐 Pastries</a></li>
+            <li><a class="dropdown-item" href="menu.html#meals">🍽️ Light Meals</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link active" href="order.html">Order</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero page-hero-order">
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content text-center">
+    <div class="section-label" style="color:var(--accent);">Skip the Queue</div>
+    <h1 class="page-hero-title">Order <em>Online</em></h1>
+    <p>Place your order for dine-in, takeout, or delivery.</p>
+  </div>
+</div>
+
+<!-- ORDER FORM -->
+<section class="section-padding bg-cream">
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- FORM -->
+      <div class="col-lg-7">
+        <div class="order-form-card">
+          <h3 class="mb-4">Place Your Order</h3>
+
+          <form id="orderForm" novalidate>
+
+            <!-- Personal Info -->
+            <fieldset class="mb-4">
+              <legend class="form-legend">👤 Your Details</legend>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="firstName" class="form-label">First Name *</label>
+                  <input type="text" class="form-control custom-input" id="firstName" placeholder="Juan" required/>
+                  <div class="invalid-feedback">Please enter your first name.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="lastName" class="form-label">Last Name *</label>
+                  <input type="text" class="form-control custom-input" id="lastName" placeholder="dela Cruz" required/>
+                  <div class="invalid-feedback">Please enter your last name.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email Address *</label>
+                  <input type="email" class="form-control custom-input" id="email" placeholder="juan@email.com" required/>
+                  <div class="invalid-feedback">Please enter a valid email.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="phone" class="form-label">Phone Number *</label>
+                  <input type="tel" class="form-control custom-input" id="phone" placeholder="09XX XXX XXXX" required/>
+                  <div class="invalid-feedback">Please enter your phone number.</div>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Order Type -->
+            <fieldset class="mb-4">
+              <legend class="form-legend">🏠 Order Type</legend>
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <input type="radio" class="btn-check" name="orderType" id="dineIn" value="dine-in" checked/>
+                  <label class="btn order-type-btn w-100" for="dineIn">🍽️ Dine In</label>
+                </div>
+                <div class="col-md-4">
+                  <input type="radio" class="btn-check" name="orderType" id="takeout" value="takeout"/>
+                  <label class="btn order-type-btn w-100" for="takeout">📦 Takeout</label>
+                </div>
+                <div class="col-md-4">
+                  <input type="radio" class="btn-check" name="orderType" id="delivery" value="delivery"/>
+                  <label class="btn order-type-btn w-100" for="delivery">🛵 Delivery</label>
+                </div>
+              </div>
+
+              <!-- Delivery Address (shown when delivery selected) -->
+              <div id="deliveryAddress" class="mt-3" style="display:none;">
+                <label for="address" class="form-label">Delivery Address *</label>
+                <input type="text" class="form-control custom-input" id="address" placeholder="Street, Barangay, City"/>
+              </div>
+
+              <!-- Date/Time -->
+              <div class="row g-3 mt-2">
+                <div class="col-md-6">
+                  <label for="orderDate" class="form-label">Date</label>
+                  <input type="date" class="form-control custom-input" id="orderDate"/>
+                </div>
+                <div class="col-md-6">
+                  <label for="orderTime" class="form-label">Preferred Time</label>
+                  <select class="form-select custom-input" id="orderTime">
+                    <option value="">Select time</option>
+                    <option>7:00 AM</option><option>7:30 AM</option>
+                    <option>8:00 AM</option><option>8:30 AM</option>
+                    <option>9:00 AM</option><option>10:00 AM</option>
+                    <option>11:00 AM</option><option>12:00 PM</option>
+                    <option>1:00 PM</option><option>2:00 PM</option>
+                    <option>3:00 PM</option><option>4:00 PM</option>
+                    <option>5:00 PM</option><option>6:00 PM</option>
+                    <option>7:00 PM</option><option>8:00 PM</option>
+                    <option>9:00 PM</option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Menu Items -->
+            <fieldset class="mb-4">
+              <legend class="form-legend">☕ Your Order</legend>
+
+              <div id="orderItems">
+                <div class="order-item-row row g-2 mb-2">
+                  <div class="col-md-6">
+                    <select class="form-select custom-input item-select">
+                      <option value="">-- Select Item --</option>
+                      <optgroup label="☕ Coffee">
+                        <option value="Sagada Latte">Sagada Latte</option>
+                        <option value="Kapeng Barako Americano">Kapeng Barako Americano</option>
+                        <option value="Benguet Cold Brew">Benguet Cold Brew</option>
+                        <option value="Caramel Macchiato">Caramel Macchiato</option>
+                        <option value="Flat White">Flat White</option>
+                        <option value="Kapeng Kalayaan">Kapeng Kalayaan</option>
+                      </optgroup>
+                      <optgroup label="🥤 Non-Coffee">
+                        <option value="Ube Milk Tea">Ube Milk Tea</option>
+                        <option value="Matcha Latte">Matcha Latte</option>
+                        <option value="Dalandan Fizz">Dalandan Fizz</option>
+                        <option value="Hot Chocolate">Hot Chocolate</option>
+                      </optgroup>
+                      <optgroup label="🥐 Pastries">
+                        <option value="Ube Croissant">Ube Croissant</option>
+                        <option value="Barako Brownie">Barako Brownie</option>
+                        <option value="Pandan Loaf Slice">Pandan Loaf Slice</option>
+                        <option value="Quezo de Bola Roll">Quezo de Bola Roll</option>
+                      </optgroup>
+                      <optgroup label="🍽️ Light Meals">
+                        <option value="Avocado Toast">Avocado Toast</option>
+                        <option value="Longsilog Wrap">Longsilog Wrap</option>
+                        <option value="Tuna Melt Panini">Tuna Melt Panini</option>
+                        <option value="Classic BLT">Classic BLT</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div class="col-md-3">
+                    <select class="form-select custom-input size-select">
+                      <option value="Regular">Regular</option>
+                      <option value="Small">Small</option>
+                      <option value="Large">Large</option>
+                    </select>
+                  </div>
+                  <div class="col-md-2">
+                    <input type="number" class="form-control custom-input qty-input" value="1" min="1" max="20"/>
+                  </div>
+                  <div class="col-md-1 d-flex align-items-center">
+                    <button type="button" class="btn btn-remove-item" onclick="removeOrderRow(this)"><i class="fas fa-times"></i></button>
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" class="btn btn-add-item mt-2" onclick="addOrderRow()">
+                <i class="fas fa-plus me-1"></i> Add Another Item
+              </button>
+            </fieldset>
+
+            <!-- Special Instructions -->
+            <fieldset class="mb-4">
+              <legend class="form-legend">📝 Additional Info</legend>
+              <div class="mb-3">
+                <label for="specialReq" class="form-label">Special Requests / Allergies</label>
+                <textarea class="form-control custom-input" id="specialReq" rows="3" placeholder="e.g. Less sugar, oat milk, no nuts..."></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="howHeard" class="form-label">How did you hear about us?</label>
+                <select class="form-select custom-input" id="howHeard">
+                  <option value="">Select one</option>
+                  <option>Google Search</option>
+                  <option>Facebook</option>
+                  <option>Instagram</option>
+                  <option>Friend/Family Referral</option>
+                  <option>Walk-in</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="newsletter"/>
+                <label class="form-check-label" for="newsletter">Subscribe to our newsletter for promos</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="agreeTerms" required/>
+                <label class="form-check-label" for="agreeTerms">I agree to the <a href="#" class="text-accent">Terms & Conditions</a> *</label>
+                <div class="invalid-feedback">You must agree to continue.</div>
+              </div>
+            </fieldset>
+
+            <!-- Payment -->
+            <fieldset class="mb-4">
+              <legend class="form-legend">💳 Payment Method</legend>
+              <div class="row g-3">
+                <div class="col-6 col-md-3">
+                  <input type="radio" class="btn-check" name="payment" id="payCash" value="cash" checked/>
+                  <label class="btn order-type-btn w-100" for="payCash">💵 Cash</label>
+                </div>
+                <div class="col-6 col-md-3">
+                  <input type="radio" class="btn-check" name="payment" id="payGcash" value="gcash"/>
+                  <label class="btn order-type-btn w-100" for="payGcash">📱 GCash</label>
+                </div>
+                <div class="col-6 col-md-3">
+                  <input type="radio" class="btn-check" name="payment" id="payMaya" value="maya"/>
+                  <label class="btn order-type-btn w-100" for="payMaya">💙 Maya</label>
+                </div>
+                <div class="col-6 col-md-3">
+                  <input type="radio" class="btn-check" name="payment" id="payCard" value="card"/>
+                  <label class="btn order-type-btn w-100" for="payCard">💳 Card</label>
+                </div>
+              </div>
+            </fieldset>
+
+            <button type="submit" class="btn btn-primary-custom w-100 btn-lg">
+              <i class="fas fa-check-circle me-2"></i>Place Order
+            </button>
+          </form>
+
+          <!-- Success Message -->
+          <div id="orderSuccess" class="order-success mt-4" style="display:none;">
+            <div class="text-center">
+              <div class="success-icon">☕</div>
+              <h4>Order Received!</h4>
+              <p>Thank you! We'll confirm your order shortly via email or SMS. See you soon!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="col-lg-5">
+        <div class="order-sidebar">
+          <div class="sidebar-card mb-4">
+            <h5>📍 Our Location</h5>
+            <p>123 Kalayaan Ave, Diliman, Quezon City</p>
+            <div class="map-placeholder">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.723598202487!2d121.13982391060675!3d14.728212737147558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397bb16fca84279%3A0xa5e8ac0800707a6f!2s861%20Libongco%204%2C%20Manggahan%2C%20Rodriguez%2C%201860%20Rizal!5e0!3m2!1sen!2sph!4v1773907363521!5m2!1sen!2sph"
+                width="100%" height="200" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy">
+              </iframe>
+            </div>
+          </div>
+
+          <div class="sidebar-card mb-4">
+            <h5>⏰ Hours</h5>
+            <table class="table table-sm hours-table">
+              <tbody>
+                <tr><td>Monday – Friday</td><td class="text-end">7:00 AM – 10:00 PM</td></tr>
+                <tr><td>Saturday</td><td class="text-end">7:00 AM – 11:00 PM</td></tr>
+                <tr><td>Sunday</td><td class="text-end">8:00 AM – 9:00 PM</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="sidebar-card mb-4">
+            <h5>📦 Delivery Info</h5>
+            <ul class="info-list">
+              <li><i class="fas fa-check me-2 text-accent"></i>Delivery radius: 5km</li>
+              <li><i class="fas fa-check me-2 text-accent"></i>Min. order for delivery: ₱300</li>
+              <li><i class="fas fa-check me-2 text-accent"></i>Delivery fee: ₱50</li>
+              <li><i class="fas fa-check me-2 text-accent"></i>Est. time: 30–45 minutes</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card promo-card">
+            <h5>🎉 Today's Promo</h5>
+            <p>Order any 2 drinks and get a <strong>FREE pastry</strong> of your choice!</p>
+            <span class="promo-badge">Valid today only</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <h5 class="footer-brand">☕ Kalayaan Cafe</h5>
+        <p>Where every cup tells a story of freedom, flavor, and Filipino pride.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/profile.php?id=61554568252497" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h6 class="footer-heading">Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="order.html">Order</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h6 class="footer-heading">Visit Us</h6>
+        <p><i class="fas fa-map-marker-alt me-2"></i>Rodriguez, Montalban</p>
+        <p><i class="fas fa-clock me-2"></i>Mon–Sun: 7:00 AM – 10:00 PM</p>
+        <p><i class="fas fa-phone me-2"></i>(02) 8123-4567</p>
+        <p><i class="fas fa-envelope me-2"></i>hello@kalayaancafe.ph</p>
+      </div>
+    </div>
+    <hr class="footer-divider"/>
+    <div class="sitemap text-center mb-3">
+      <strong>Site Map:</strong>
+      <a href="index.html">Home</a> |
+      <a href="menu.html">Menu</a> |
+      <a href="about.html">About Us</a> |
+      <a href="order.html">Order</a>
+    </div>
+    <p class="footer-credit text-center">© 2024 Kalayaan Cafe. Designed & Developed by <strong>Nichole Angelo Teodoro</strong> · IT130L Web Design & Development</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
